@@ -74,6 +74,7 @@ with open(file_to_load) as election_data:
 
         # Determine the county votes and percentages
         txt_file.write(f"\nCounty Results:\n")
+        print(f"\nCounty Results:\n")
         for county in votes_by_county:
             c_votes = votes_by_county[county]
             c_percentage = float(c_votes) / float(total_votes) * 100
@@ -89,6 +90,7 @@ with open(file_to_load) as election_data:
         f"Largest County Turnout: {largest_turnout}\n"
         f"-------------------------\n")
         txt_file.write(largest_county_summary)
+        print(largest_county_summary, end="")
         # Determine the percentage of votes for each candidate by looping through the counts.
         for candidate in candidate_votes:
             votes = candidate_votes[candidate]
@@ -107,6 +109,7 @@ with open(file_to_load) as election_data:
         f"Winning Percentage: {winning_percentage:.1f}%\n"
         f"-------------------------\n")
         txt_file.write(winning_candidate_summary)
+        print(winning_candidate_summary, end="")
 
         # Create three if statements to print out the voter turnout results similar to the results shown above.
         # Add the results to the output file.
